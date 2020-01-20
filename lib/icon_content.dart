@@ -17,7 +17,7 @@ class IconContent extends StatelessWidget {
         Icon(
           icon,
           size: 80.0,
-          color: AppColors.textInactive,
+          color: AppColors.inactive,
         ),
         SizedBox(
           height: AppLayout.widgetMargin,
@@ -26,7 +26,7 @@ class IconContent extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: 18.0,
-            color: AppColors.textInactive,
+            color: AppColors.inactive,
           ),
         )
       ],

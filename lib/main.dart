@@ -12,6 +12,17 @@ class CalculatorApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         primaryColor: AppColors.primary,
         scaffoldBackgroundColor: AppColors.primary,
+        sliderTheme: SliderTheme.of(context).copyWith(
+            activeTrackColor: Colors.white,
+            inactiveTrackColor: AppColors.inactive,
+            thumbColor: AppColors.accent,
+            thumbShape: RoundSliderThumbShape(
+              enabledThumbRadius: 15,
+            ),
+            overlayColor: AppColors.accentAlpha,
+            overlayShape: RoundSliderOverlayShape(
+              overlayRadius: 30,
+            )),
       ),
       home: InputPage(),
     );
