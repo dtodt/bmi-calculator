@@ -1,6 +1,9 @@
 import 'package:bmi_calculator/app_colors.dart';
 import 'package:flutter/material.dart';
 
+final containerMargin = 15.0;
+final bottomContainerHeight = 80.0;
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -14,7 +17,6 @@ class _InputPageState extends State<InputPage> {
         title: Text('BMI CALCULATOR'),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
             child: Row(
@@ -52,6 +54,14 @@ class _InputPageState extends State<InputPage> {
                 ),
               ],
             ),
+          ),
+          Container(
+            color: AppColors.accent,
+            margin: EdgeInsets.only(
+              top: containerMargin,
+            ),
+            height: bottomContainerHeight,
+            width: double.infinity,
           )
         ],
       ),
@@ -71,7 +81,7 @@ class ReusableCard extends StatelessWidget {
         color: colour,
         borderRadius: BorderRadius.circular(10.0),
       ),
-      margin: EdgeInsets.all(15.0),
+      margin: EdgeInsets.all(containerMargin),
     );
   }
 }
