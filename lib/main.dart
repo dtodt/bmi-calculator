@@ -5,9 +5,14 @@ void main() => runApp(CalculatorApp());
 class CalculatorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    const primaryColor = Color(0xFF0A0E21);
+
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData.dark(),
+      title: 'BMI CALCULATOR',
+      theme: ThemeData.dark().copyWith(
+        primaryColor: primaryColor,
+        scaffoldBackgroundColor: primaryColor,
+      ),
       home: InputPage(),
     );
   }
