@@ -13,6 +13,14 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender selectedGender;
+
+  void updateGender(Gender gender) {
+    setState(() {
+      selectedGender = gender;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,20 +34,26 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: AppColors.secondary,
+                    colour: selectedGender == Gender.MALE
+                        ? AppColors.cardActive
+                        : AppColors.cardInactive,
                     child: IconContent(
                       icon: FontAwesomeIcons.mars,
                       label: 'MALE',
                     ),
+                    onTap: () => updateGender(Gender.MALE),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: AppColors.secondary,
+                    colour: selectedGender == Gender.FEMALE
+                        ? AppColors.cardActive
+                        : AppColors.cardInactive,
                     child: IconContent(
                       icon: FontAwesomeIcons.venus,
                       label: 'FEMALE',
                     ),
+                    onTap: () => updateGender(Gender.FEMALE),
                   ),
                 ),
               ],
@@ -47,7 +61,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusableCard(
-              colour: AppColors.secondary,
+              colour: AppColors.cardActive,
             ),
           ),
           Expanded(
@@ -55,12 +69,12 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    colour: AppColors.secondary,
+                    colour: AppColors.cardActive,
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
-                    colour: AppColors.secondary,
+                    colour: AppColors.cardActive,
                   ),
                 ),
               ],
@@ -79,3 +93,5 @@ class _InputPageState extends State<InputPage> {
     );
   }
 }
+
+enum Gender { MALE, FEMALE }
