@@ -12,7 +12,9 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
-  int height = 50;
+  int age = 18;
+  int height = 180;
+  int weight = 60;
 
   void updateGender(Gender gender) {
     setState(() {
@@ -104,11 +106,89 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: AppColors.cardActive,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'WEIGHT',
+                          style: AppLayout.labelTextStyle,
+                        ),
+                        Text(
+                          weight.toString(),
+                          style: AppLayout.numberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  if (weight - 1 > 0) {
+                                    weight--;
+                                  }
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     colour: AppColors.cardActive,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'AGE',
+                          style: AppLayout.labelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: AppLayout.numberTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  if (age - 1 > 0) {
+                                    age--;
+                                  }
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -129,3 +209,25 @@ class _InputPageState extends State<InputPage> {
 }
 
 enum Gender { MALE, FEMALE }
+
+class RoundIconButton extends StatelessWidget {
+  const RoundIconButton({@required this.icon, @required this.onPressed});
+
+  final IconData icon;
+  final Function onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      child: Icon(icon),
+      constraints: BoxConstraints.tightFor(
+        height: 56.0,
+        width: 56.0,
+      ),
+      elevation: 6.0,
+      fillColor: Color(0xFF4C4F5E),
+      onPressed: onPressed,
+      shape: CircleBorder(),
+    );
+  }
+}
