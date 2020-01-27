@@ -7,4 +7,5 @@ class AppColors {
   static const Color inactive = Color(0xFF8D8E98);
   static const Color cardActive = Color(0xFF1D1E33);
   static const Color cardInactive = Color(0xFF111328);
+  static const Color labelResult = Color(0xFF24D876);
 }
