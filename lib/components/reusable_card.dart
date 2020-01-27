@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/app_layout.dart';
+import 'package:bmi_calculator/util/app_layout.dart';
 import 'package:flutter/material.dart';
 
 class ReusableCard extends StatelessWidget {

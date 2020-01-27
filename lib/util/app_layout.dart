@@ -1,4 +1,4 @@
-import 'package:bmi_calculator/app_colors.dart';
+import 'package:bmi_calculator/util/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class AppLayout {

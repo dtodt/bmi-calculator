@@ -1,5 +1,5 @@
-import 'package:bmi_calculator/app_colors.dart';
-import 'package:bmi_calculator/app_layout.dart';
+import 'package:bmi_calculator/util/app_colors.dart';
+import 'package:bmi_calculator/util/app_layout.dart';
 import 'package:flutter/material.dart';
 
 class IconContent extends StatelessWidget {
