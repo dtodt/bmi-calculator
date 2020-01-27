@@ -194,13 +194,21 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            color: AppColors.accent,
-            margin: EdgeInsets.only(
-              top: AppLayout.widgetMargin,
+          GestureDetector(
+            child: Container(
+              child: Center(
+                child: Text('CALCULATE'),
+              ),
+              color: AppColors.accent,
+              margin: EdgeInsets.only(
+                top: AppLayout.widgetMargin,
+              ),
+              height: AppLayout.bottomContainerHeight,
+              width: double.infinity,
             ),
-            height: AppLayout.bottomContainerHeight,
-            width: double.infinity,
+            onTap: () {
+              Navigator.pushNamed(context, '/results');
+            },
           )
         ],
       ),
