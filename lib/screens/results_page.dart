@@ -21,7 +21,7 @@ class ResultsPage extends StatelessWidget {
               style: AppLayout.titleTextStyle,
             ),
             padding: EdgeInsets.only(
-              left: 20.0,
+              left: 15.0,
               top: 30.0,
             ),
           ),
